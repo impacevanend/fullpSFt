@@ -1,0 +1,24 @@
+
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">View</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of produdcts">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}$</td>
+        <td><button class="btn btn-outline-info" routerLink="/detail/{{product.id}}"><i class="far fa-eye"></i> View</button></td>
+        <td><button class="btn btn-outline-info" routerLink="/edit/{{product.id}}"><i class="far fa-edit"></i> Edit</button></td>
+        <td><button class="btn btn-outline-secondary" (click)="delete(product.id)"><i class="fas fa-eraser"></i> Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
